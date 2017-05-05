@@ -14,13 +14,11 @@ h=$(hostname)
 echo "$h ansible_host=$i" >> ~/ansible.log
 
 echo "[tower]" >> ~/ansible/hosts
-echo "$i  ansible_connection=ssh ansible_ssh_user=pi ansible_ssh_pass=tower" >> ~/ansible/hosts
+echo "$i  ansible_connection=ssh ansible_ssh_user=tower ansible_ssh_pass=tower" >> ~/ansible/hosts
 
 cd ~/ansible-tower
 ansible-playbook setup.yml >> ~/ansible.log
 
 cat ~/ansible.log
 
-echo "logon tower:tower
-echo "wget wget https://raw.githubusercontent.com/Revenberg/ansible-tower/master/install-tower.sh && chmod +x install-tower.sh"
 
