@@ -12,7 +12,7 @@ git commit -m "updates"
 git push -u origin master
 
 sudo adduser pi sudo
-sudo sh -c "echo 'pi ALL=NOPASSWD: ALL' >> /etc/sudoers"
+sudo sh -c "echo 'pi ALL=(ALL:ALL)NOPASSWD: ALL' >> /etc/sudoers"
 
 
 sudo rm -rf /home/pi/ansible*
