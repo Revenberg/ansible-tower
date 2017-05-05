@@ -11,7 +11,7 @@ git add -A *
 git commit -m "updates"
 git push -u origin master
 
-sudo echo "pi      ALL=(ALL) ALL" >> /etc/sudoers
+sudo -c 'echo "pi      ALL=(ALL) ALL" >> /etc/sudoers'
 
 
 
