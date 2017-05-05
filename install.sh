@@ -31,4 +31,4 @@ apt-get install python-pip git python-dev sshpass -y
 pip install ansible 
 sudo pip install markupsafe 
 
-sudo -u tower sh -c install-tower.sh
+sudo -u tower sh -c  /home/pi/tower/install-tower.sh
