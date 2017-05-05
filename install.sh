@@ -11,7 +11,8 @@ git add -A *
 git commit -m "updates"
 git push -u origin master
 
-sudo su -c 'echo "pi      ALL=(ALL) ALL" >> /etc/sudoers'
+sudo usermod -a -G sudo pi
+#sudo su -c 'echo "pi      ALL=(ALL) ALL" >> /etc/sudoers'
 
 
 sudo rm -rf /home/pi/ansible*
