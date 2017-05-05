@@ -1,0 +1,29 @@
+---
+- name: Hello Ansible - quick start
+  hosts: tower
+  become_user: root
+  become: yes
+
+  tasks:    
+    - name: Update apt-get cache
+      apt: >
+        update_cache=yes
+        cache_valid_time=360
+    
+    - name: Update all packages to the latest version
+      apt: > 
+        upgrade=yes
+
+    - name: set timezone to Europe/Amsterdam
+      timezone:
+        name: Europe/Amsterdam
+
+    - name: wolfram-        
+    - name: tar xvzf ansible-tower-setup-latest.tar.gz
+      unarchive:
+        src: ./ansible-tower-setup-latest.tar.gz        
+        dest: /tmp
+        remote_src: false
+
+
+
