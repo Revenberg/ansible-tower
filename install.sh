@@ -32,6 +32,6 @@ pip install ansible
 pip install markupsafe 
 
 echo "logon tower:tower
-echo "wget wget https://raw.githubusercontent.com/Revenberg/ansible-tower/master/install-tower.sh && chmod +x install-tower.sh"
+echo "wget https://raw.githubusercontent.com/Revenberg/ansible-tower/master/install-tower.sh && chmod +x install-tower.sh && ./install-tower.sh"
 
 exit
