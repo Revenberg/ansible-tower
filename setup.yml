@@ -1,7 +1,7 @@
 ---
 - name: Install Ansible Tower
   hosts: tower
-  become_user: pi
+  become_user: tower
   become: yes
 
   tasks:    
@@ -34,16 +34,17 @@
     - name: tar xvzf ansible-tower-setup-latest.tar.gz
       unarchive:
         src: ./ansible-tower-setup-latest.tar.gz        
-        dest: ~/.
+        dest: /tmp
         remote_src: false
 
     - name: copy config
       copy:
         src: ./inventory
-        dest: ~/ansible-tower-setup-3.1.3/inventory
+        dest: /tmp/ansible-tower-setup-3.1.3/inventory
 
     - name: Setup Ansible Tower
-      command: ~/ansible-tower-setup-3.1.3/setup.sh
+      command: /tmp/ansible-tower-setup-3.1.3/setup.sh
       args:
-        chdir: ~/ansible-tower-setup-3.1.3
-
+        chdir: /tmp/ansible-tower-setup-3.1.3
+      become_user: root
+      become: yes
