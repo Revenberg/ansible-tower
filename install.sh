@@ -12,7 +12,7 @@ git commit -m "updates"
 git push -u origin master
 
 sudo adduser pi sudo
-sudo sh -c "echo 'username ALL=NOPASSWD: ALL' >> /etc/sudoers"
+sudo sh -c "echo 'pi ALL=NOPASSWD: ALL' >> /etc/sudoers"
 
 
 sudo rm -rf /home/pi/ansible*
@@ -44,3 +44,5 @@ echo "$i  ansible_connection=ssh ansible_ssh_user=pi ansible_ssh_pass="$1 >> ~/a
 
 cd ~/ansible-tower
 ansible-playbook setup.yml >> ~/ansible.log
+
+cat ~/ansible.log
