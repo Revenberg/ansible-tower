@@ -1,6 +1,6 @@
 ---
 - name: Hello Ansible - quick start
-  hosts: rpi
+  hosts: tower
   become_user: root
   become: yes
 
