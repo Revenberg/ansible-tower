@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $# -ne 1 ]; then
+    echo $0: usage: ./install.sh  password
+    return 0
+fi
+
 cd  ~/tower
 git config --global credential.helper 'cache --timeout 14400'
 git add -A *
